@@ -17,6 +17,9 @@ let TodoService = {
         }
         const todoList = realmInstance.objects('Todo');
         const maxId = RealmUtils.getMaxIdForPrimaryKey(todoList);
+
+        console.log("max" + maxId);
+
         realmInstance.write(() => {
             realmInstance.create('Todo', { id: maxId + 1, task: newTask.trim() });
         })

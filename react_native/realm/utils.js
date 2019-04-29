@@ -3,7 +3,7 @@ let RealmUtils = {
         let maxId = todoList.max("id");
 
         console.log("maxId:", maxId);
-        if (maxId == null) {
+        if (maxId == null || maxId == undefined) {
             return 0;
         }
         return maxId;

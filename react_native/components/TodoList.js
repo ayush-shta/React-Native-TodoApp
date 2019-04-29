@@ -12,21 +12,29 @@ class TodoList extends Component {
         this.state = {
             todoList: TodoService.findall(),
         }
+        console.log(this.state.todoList);
     }
 
     static navigationOptions = {
         title: 'Todos',
     };
 
-    updateTodoList() {
+    refresh() {
+        this.state.todoList = TodoService.findall();
+    }
+
+    updateTodoList(todoList) {
         this.setState({
-            todoList: this.state.todoList
+            todoList: todoList
         });
     }
 
     deleteTodo(todo) {
         TodoService.delete(todo);
-        this.updateTodoList();
+        this.updateTodoList(this.state.todoList);
+        // this.setState({
+        //     todoList: TodoService.findall()
+        // });
     }
 
     showDetail(todo) {
@@ -35,15 +43,10 @@ class TodoList extends Component {
         });
     }
 
-    refresh() {
-        this.state.todoList = TodoService.findall();
-    }
-
-
     render() {
         const isSaved = this.props.navigation.getParam('isSaved', false);
 
-        if(isSaved){
+        if (isSaved) {
             this.refresh();
         }
 

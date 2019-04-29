@@ -14,11 +14,12 @@ class AddTodo extends Component {
     }
 
     saveTodo() {
-        TodoService.save(this.state.newTask);
+        let todoList = TodoService.save(this.state.newTask);
         this.setState({
             newTask: ''
         });
-        navigator.navigate
+
+        this.props.updateTodoList(todoList);
     }
 
 
