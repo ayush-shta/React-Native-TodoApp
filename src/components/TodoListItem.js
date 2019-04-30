@@ -32,7 +32,7 @@ class TodoListItem extends Component {
 
         return (
             <TouchableHighlight style={styles.itemContainer}
-                underlayColor={Color.VERY_LIGHT_GREY}
+                underlayColor={Color.LIST_ITEM_UDERLAY}
                 onPress={this.changeCompletedStatus}
             >
                 <View style={styles.item}>
