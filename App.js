@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import AppContainer from './AppContainer';
+import AppContainer from './src/AppContainer';
 
 
 export default class App extends Component {

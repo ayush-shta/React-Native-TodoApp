@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { TouchableHighlight, View, Text, StyleSheet } from 'react-native';
-import { Menu, MenuOptions, MenuOption, MenuTrigger, MenuProvider } from 'react-native-popup-menu';
+import { Menu, MenuOptions, MenuOption, MenuTrigger } from 'react-native-popup-menu';
 
 import CheckBox from './CheckBox';
 import TodoService from '../realm/service/todoService';
