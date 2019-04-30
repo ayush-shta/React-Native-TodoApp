@@ -14,7 +14,7 @@ class TodoListItem extends Component {
         }
     }
 
-    changeCompletedStatus() {
+    changeCompletedStatus = () => {
         var todo = this.state.todo;
         TodoService.update(() => {
             todo.isCompleted = !todo.isCompleted;
@@ -31,11 +31,11 @@ class TodoListItem extends Component {
 
         return (
             <TouchableHighlight style={styles.itemContainer}
-            underlayColor = {'#EEEEEE'}
-            onPress={() => this.changeCompletedStatus()}
+                underlayColor={'#EEEEEE'}
+                onPress={this.changeCompletedStatus}
             >
                 <View style={styles.item}>
-                    <CheckBox data={todo} style={{ flex: 1 }} onCheckBoxPressed={() => this.changeCompletedStatus()} />
+                    <CheckBox data={todo} style={{ flex: 1 }} onCheckBoxPressed={this.changeCompletedStatus} />
                     <Text style={{ fontSize: 18, color: color, textDecorationLine: textDecorationLine, flex: 1 }}>{todo.task}</Text>
 
                     <Menu>

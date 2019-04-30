@@ -13,7 +13,7 @@ class AddTodo extends Component {
         }
     }
 
-    saveTodo() {
+    saveTodo = () => {
         let todoList = TodoService.save(this.state.newTask);
         this.setState({
             newTask: ''
@@ -55,7 +55,7 @@ class AddTodo extends Component {
             // onBlur={() => this.setState({ showBottomView: false })}
             >
                 <TextInput style={styles.textInput}
-                    onSubmitEditing={() => { this.saveTodo() }}
+                    onSubmitEditing={this.saveTodo}
                     // onFocus={() => this.setState({ showBottomView: true })}
                     placeholder='Add a todo'
                     value={this.state.newTask}

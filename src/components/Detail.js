@@ -18,7 +18,7 @@ class Detail extends Component {
         title: 'Todo Detail',
     };
 
-    updateTodo() {
+    updateTodo = () => {
         TodoService.update(() => {
             this.todo.task = this.state.task;
             this.todo.isCompleted = this.state.isCompleted;
@@ -77,7 +77,7 @@ class Detail extends Component {
                 </View>
 
                 <TouchableHighlight style={styles.button}
-                    onPress={() => this.updateTodo()}
+                    onPress={this.updateTodo}
                     underlayColor={'#4FC3F7'}
                 >
                     <Text style={styles.buttonText}>Save</Text>
