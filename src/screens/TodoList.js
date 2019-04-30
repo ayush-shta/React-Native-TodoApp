@@ -4,6 +4,7 @@ import { FlatList, View, StyleSheet } from 'react-native';
 import AddTodo from '../components/AddTodo';
 import TodoListItem from '../components/TodoListItem';
 import TodoService from '../realm/service/todoService'
+import Color from '../constants/Color'
 
 
 class TodoList extends Component {
@@ -65,7 +66,7 @@ class TodoList extends Component {
                     keyExtractor={(item, index) => item.id.toString()}
                 />
 
-                <View style={{ backgroundColor: '#E0E0E0' }}>
+                <View style={{ backgroundColor: Color.VERY_LIGHT_GREY }}>
                     <AddTodo
                         updateTodoList={this.updateTodoList}
                     />
@@ -79,7 +80,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        backgroundColor: '#fff',
+        backgroundColor: Color.WHITE,
     },
     item: {
         padding: 10,
@@ -89,7 +90,7 @@ const styles = StyleSheet.create({
     },
     itemContainer: {
         borderBottomWidth: 1,
-        borderBottomColor: '#333',
+        borderBottomColor: Color.GREY,
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',

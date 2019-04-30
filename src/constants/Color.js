@@ -1,0 +1,9 @@
+export default {
+    APP_THEME :'#03A9F4',
+    WHITE: '#FFFFFF',
+    BLACK: '#000000',
+    VERY_LIGHT_GREY: '#E0E0E0',
+    LIGHT_GREY: '#BDBDBD',
+    GREY: '#333333',
+    BUTTON_UNDERLAY:'#4FC3F7'
+}

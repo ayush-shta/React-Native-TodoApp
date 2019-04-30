@@ -6,22 +6,19 @@ import RealmUtils from '../utils';
 const realmInstance = new Realm({ schema: [Todo] });
 
 
-let TodoService = {
+const TodoService = {
     findall() {
         return realmInstance.objects('Todo').sorted('id');
     },
 
     save(newTask) {
-        if (newTask.trim() == '') {
-            return;
-        }
         const todoList = realmInstance.objects('Todo');
         const maxId = RealmUtils.getMaxIdForPrimaryKey(todoList);
 
         console.log("max" + maxId);
 
         realmInstance.write(() => {
-            realmInstance.create('Todo', { id: maxId + 1, task: newTask.trim() });
+            realmInstance.create('Todo', { id: maxId + 1, task: newTask });
         })
         return todoList;
     },

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { TextInput, StyleSheet, View, TouchableOpacity, Text } from 'react-native';
 
-import TodoService from '../realm/service/todoService'
+import TodoService from '../realm/service/todoService';
+import Color from '../constants/Color'
 
 class AddTodo extends Component {
     constructor(props) {
@@ -14,7 +15,11 @@ class AddTodo extends Component {
     }
 
     saveTodo = () => {
-        let todoList = TodoService.save(this.state.newTask);
+        const newTask = this.state.newTask.trim();
+        if (newTask == '') {
+            return;
+        }
+        let todoList = TodoService.save(newTask);
         this.setState({
             newTask: ''
         });
@@ -74,15 +79,15 @@ const styles = StyleSheet.create({
         padding: 10,
         fontSize: 18,
         borderWidth: 1,
-        borderColor: '#eee',
+        borderColor: Color.VERY_LIGHT_GREY,
         borderRadius: 8,
-        backgroundColor: '#fff',
+        backgroundColor: Color.WHITE,
         marginTop: 10,
         marginBottom: 10,
     },
     button: {
         height: 44,
-        backgroundColor: '#03A9F4',
+        backgroundColor: Color.APP_THEME,
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 8,

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableHighlight } from 'react-native';
 
 import TodoService from '../realm/service/todoService'
-
+import Color from '../constants/Color'
 
 class Detail extends Component {
     constructor(props) {
@@ -78,7 +78,7 @@ class Detail extends Component {
 
                 <TouchableHighlight style={styles.button}
                     onPress={this.updateTodo}
-                    underlayColor={'#4FC3F7'}
+                    underlayColor={Color.BUTTON_UNDERLAY}
                 >
                     <Text style={styles.buttonText}>Save</Text>
                 </TouchableHighlight>
@@ -94,15 +94,15 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         margin: 10,
-        backgroundColor: '#fff',
+        backgroundColor: Color.WHITE,
     },
     textInput: {
         padding: 10,
         fontSize: 18,
         borderWidth: 1,
-        borderColor: '#E0E0E0',
+        borderColor: Color.VERY_LIGHT_GREY,
         borderRadius: 8,
-        backgroundColor: '#fff',
+        backgroundColor: Color.WHITE,
         marginTop: 10,
         marginBottom: 10,
     },
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     },
     button: {
         height: 44,
-        backgroundColor: '#03A9F4',
+        backgroundColor: Color.APP_THEME,
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 8,

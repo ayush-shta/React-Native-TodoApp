@@ -4,6 +4,7 @@ import { Menu, MenuOptions, MenuOption, MenuTrigger } from 'react-native-popup-m
 
 import CheckBox from './CheckBox';
 import TodoService from '../realm/service/todoService';
+import Color from '../constants/Color'
 
 
 class TodoListItem extends Component {
@@ -26,12 +27,12 @@ class TodoListItem extends Component {
 
     render() {
         let todo = this.state.todo;
-        let color = todo.isCompleted ? '#BDBDBD' : '#000';
+        let color = todo.isCompleted ? Color.LIGHT_GREY : Color.BLACK;
         let textDecorationLine = todo.isCompleted ? 'line-through' : 'none';
 
         return (
             <TouchableHighlight style={styles.itemContainer}
-                underlayColor={'#EEEEEE'}
+                underlayColor={Color.VERY_LIGHT_GREY}
                 onPress={this.changeCompletedStatus}
             >
                 <View style={styles.item}>
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
     },
     itemContainer: {
         borderBottomWidth: 1,
-        borderBottomColor: '#333',
+        borderBottomColor: Color.GREY,
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
