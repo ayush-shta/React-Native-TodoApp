@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { FlatList, View, StyleSheet } from 'react-native';
 
-import AddTodo from './AddTodo';
-import TodoListItem from './TodoListItem';
+import AddTodo from '../components/AddTodo';
+import TodoListItem from '../components/TodoListItem';
 import TodoService from '../realm/service/todoService'
 
 
@@ -23,13 +23,13 @@ class TodoList extends Component {
         this.state.todoList = TodoService.findall();
     }
 
-    updateTodoList(todoList) {
+    updateTodoList = (todoList) => {
         this.setState({
             todoList: todoList
         });
     }
 
-    deleteTodo(todo) {
+    deleteTodo = (todo) => {
         TodoService.delete(todo);
         this.updateTodoList(this.state.todoList);
         // this.setState({
@@ -37,7 +37,7 @@ class TodoList extends Component {
         // });
     }
 
-    showDetail(todo) {
+    showDetail = (todo) => {
         this.props.navigation.navigate('Detail', {
             todo: todo
         });
@@ -58,8 +58,8 @@ class TodoList extends Component {
                     renderItem={({ item }) =>
                         <TodoListItem
                             todo={item}
-                            onDeleteTodo={(todo) => this.deleteTodo(todo)}
-                            onShowDetail={(todo) => this.showDetail(todo)}
+                            onDeleteTodo={this.deleteTodo}
+                            onShowDetail={this.showDetail}
                         />
                     }
                     keyExtractor={(item, index) => item.id.toString()}
@@ -67,7 +67,7 @@ class TodoList extends Component {
 
                 <View style={{ backgroundColor: '#E0E0E0' }}>
                     <AddTodo
-                        updateTodoList={(todoList) => this.updateTodoList(todoList)}
+                        updateTodoList={this.updateTodoList}
                     />
                 </View>
             </View>
