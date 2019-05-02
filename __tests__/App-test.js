@@ -4,15 +4,16 @@
 
 import 'react-native';
 import React from 'react';
+// Note: test renderer must be required after react-native.
+import renderer from 'react-test-renderer';
+import { MenuProvider } from 'react-native-popup-menu';
 
 import TodoService from '../src/realm/service/todoService'
+import RealmUtils from '../src/realm/utils';
 import AddTodo from '../src/components/AddTodo';
 import CheckBox from '../src/components/CheckBox';
 import TodoListItem from '../src/components/TodoListItem';
 
-// Note: test renderer must be required after react-native.
-import renderer from 'react-test-renderer';
-import { MenuProvider } from 'react-native-popup-menu';
 
 function initalizeDatabase() {
     const tasks = ["one", "two", "three"];
@@ -59,6 +60,15 @@ describe('Realm Tasks', () => {
         TodoService.delete(todo);
         const todoDeleted = TodoService.findById(id);
         expect(todoDeleted).toBeFalsy();
+    })
+
+    test('Realm primary key generation', () => {
+        const todoList = TodoService.findall();
+        const id = RealmUtils.getMaxIdForPrimaryKey(todoList);
+        const isNumber = Number.isInteger(id);
+        expect(id).toBeTruthy();
+        expect(id).toBeGreaterThanOrEqual(0);
+        expect(isNumber).toBeTruthy();
     })
 });
 
