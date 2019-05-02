@@ -1,0 +1,322 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component renders correctly AddTodo 1`] = `
+<View
+  style={
+    Object {
+      "margin": 10,
+    }
+  }
+>
+  <TextInput
+    allowFontScaling={true}
+    onChangeText={[Function]}
+    onSubmitEditing={[Function]}
+    placeholder="Add a todo"
+    rejectResponderTermination={true}
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "borderColor": "#E0E0E0",
+        "borderRadius": 8,
+        "borderWidth": 1,
+        "fontSize": 18,
+        "marginBottom": 10,
+        "marginTop": 10,
+        "padding": 10,
+      }
+    }
+    underlineColorAndroid="transparent"
+    value=""
+  />
+</View>
+`;
+
+exports[`Component renders correctly CheckBox 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "overflow": "hidden",
+      },
+      Object {
+        "backgroundColor": "transparent",
+        "borderRadius": 5,
+      },
+    ]
+  }
+>
+  <View
+    data={
+      Todo {
+        "id": 2,
+        "isCompleted": false,
+        "task": "two",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "flex-start",
+          "padding": 8,
+        },
+        Object {
+          "backgroundColor": "transparent",
+          "borderRadius": 5,
+        },
+        undefined,
+      ]
+    }
+  >
+    <Text
+      allowFontScaling={false}
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+            "fontSize": 20,
+          },
+          Object {
+            "marginRight": 10,
+          },
+          Object {
+            "fontFamily": "Material Icons",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+          Object {},
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Component renders correctly Todo List Item 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 1,
+        },
+        undefined,
+        undefined,
+        undefined,
+      ]
+    }
+  >
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderBottomColor": "#333333",
+          "borderBottomWidth": 1,
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "padding": 4,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "fontSize": 18,
+            "justifyContent": "space-between",
+            "padding": 10,
+          }
+        }
+      >
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "overflow": "hidden",
+              },
+              Object {
+                "backgroundColor": "transparent",
+                "borderRadius": 5,
+              },
+            ]
+          }
+        >
+          <View
+            data={
+              Todo {
+                "id": 2,
+                "isCompleted": false,
+                "task": "two",
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "padding": 8,
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                  "borderRadius": 5,
+                },
+                undefined,
+              ]
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              style={
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "fontSize": 20,
+                  },
+                  Object {
+                    "marginRight": 10,
+                  },
+                  Object {
+                    "fontFamily": "Material Icons",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+        <Text
+          style={
+            Object {
+              "color": "#000000",
+              "flex": 1,
+              "fontSize": 18,
+              "textDecorationLine": "none",
+            }
+          }
+        >
+          two
+        </Text>
+        <View>
+          <View
+            collapsable={false}
+          >
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={null}
+            >
+              <View
+                ctx={
+                  Object {
+                    "menuActions": Object {
+                      "_getOpenedMenu": [Function],
+                      "_notify": [Function],
+                      "closeMenu": [Function],
+                      "isMenuOpen": [Function],
+                      "openMenu": [Function],
+                      "toggleMenu": [Function],
+                    },
+                    "menuRegistry": Object {
+                      "getAll": [Function],
+                      "getMenu": [Function],
+                      "setOptionsCustomStyles": [Function],
+                      "subscribe": [Function],
+                      "unsubscribe": [Function],
+                      "updateLayoutInfo": [Function],
+                    },
+                  }
+                }
+                style={
+                  Array [
+                    undefined,
+                    Object {
+                      "padding": 8,
+                    },
+                  ]
+                }
+              >
+                <Text>
+                  ...
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+  <RCTSafeAreaView
+    emulateUnlessSupported={true}
+    pointerEvents="box-none"
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      onLayout={[Function]}
+      pointerEvents="box-none"
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    />
+  </RCTSafeAreaView>
+</View>
+`;
