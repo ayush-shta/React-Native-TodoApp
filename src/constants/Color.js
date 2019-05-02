@@ -7,4 +7,5 @@ export default {
     GREY: '#333333',
     BUTTON_UNDERLAY:'#4FC3F7',
     LIST_ITEM_UDERLAY:'#EEEEEE',
+    TRANSPARENT:'transparent'
 }

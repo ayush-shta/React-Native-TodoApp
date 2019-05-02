@@ -18,9 +18,9 @@ class CheckBox extends Component {
             <Icon.Button
                 data={this.state.data}
                 name={iconName}
-                backgroundColor='rgba(0,0,0,0)'
+                backgroundColor={Color.TRANSPARENT}
                 color={Color.BLACK}
-                underlayColor='rgba(0,0,0,0)'
+                underlayColor={Color.TRANSPARENT}
                 activeOpacity={0.6}
                 onPress={this.props.onCheckBoxPressed}
             >
