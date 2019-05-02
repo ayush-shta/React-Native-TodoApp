@@ -25,6 +25,18 @@ class TodoListItem extends Component {
         });
     }
 
+    renderMenu = (todo) => {
+        return (
+            <Menu>
+                <MenuTrigger text='...' style={{ padding: 8 }} />
+                <MenuOptions>
+                    <MenuOption onSelect={() => this.props.onShowDetail(todo)} text='View Detail' style={styles.menuOption} />
+                    <MenuOption onSelect={() => this.props.onDeleteTodo(todo)} text='Delete' style={styles.menuOption} />
+                </MenuOptions>
+            </Menu>
+        );
+    }
+
     render() {
         let todo = this.state.todo;
         let color = todo.isCompleted ? Color.LIGHT_GREY : Color.BLACK;
@@ -36,16 +48,9 @@ class TodoListItem extends Component {
                 onPress={this.changeCompletedStatus}
             >
                 <View style={styles.item}>
-                    <CheckBox data={todo} style={{ flex: 1 }} onCheckBoxPressed={this.changeCompletedStatus} />
-                    <Text style={{ fontSize: 18, color: color, textDecorationLine: textDecorationLine, flex: 1 }}>{todo.task}</Text>
-
-                    <Menu>
-                        <MenuTrigger text='...' style={{ padding: 8 }} />
-                        <MenuOptions>
-                            <MenuOption onSelect={() => this.props.onShowDetail(todo)} text='View Detail' style={{ padding: 10 }} />
-                            <MenuOption onSelect={() => this.props.onDeleteTodo(todo)} text='Delete' style={{ padding: 10 }} />
-                        </MenuOptions>
-                    </Menu>
+                    <CheckBox data={todo} style={styles.checkBox} onCheckBoxPressed={this.changeCompletedStatus} />
+                    <Text style={[styles.itemText, { color: color, textDecorationLine: textDecorationLine, }]}>{todo.task}</Text>
+                    {this.renderMenu(todo)}
                 </View>
             </TouchableHighlight>
         )
@@ -71,6 +76,16 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         padding: 4
+    },
+    checkBox: {
+        flex: 1
+    },
+    itemText: {
+        fontSize: 18,
+        flex: 1
+    },
+    menuOption: {
+        padding: 10
     },
 });
 
