@@ -10,7 +10,7 @@
     "react": "16.8.3",
     "react-native": "0.59.5",
     "react-native-dropdown": "https://github.com/alinz/react-native-dropdown",
-    "react-native-gesture-handler": "^1.2.1",
+    "react-native-gesture-handler": "^1.1.0",
     "react-native-popup-dialog": "^0.18.2",
     "react-native-popup-menu": "^0.15.6",
     "react-native-screens": "^1.0.0-alpha.22",
@@ -28,6 +28,7 @@
   },
   "jest": {
     "preset": "react-native",
-    "transformIgnorePatterns": []
+    "transformIgnorePatterns": [
+    ]
   }
 }
