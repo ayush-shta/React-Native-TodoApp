@@ -8,20 +8,27 @@ import Color from '../constants/Color'
 
 
 class TodoList extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            todoList: TodoService.findall(),
-        }
-        console.log(this.state.todoList);
-    }
 
     static navigationOptions = {
         title: 'Todos',
     };
 
+    state = {
+        todoList: null,
+    }
+
+    componentDidMount(){
+        this.setState({
+            todoList: TodoService.findall(),
+        });
+    }
+
     refresh() {
-        this.state.todoList = TodoService.findall();
+        // this.state.todoList = TodoService.findall();
+        // possiblity of recurisve calls
+        this.setState({
+            todoList: TodoService.findall()
+        })
     }
 
     updateTodoList = (todoList) => {
@@ -40,7 +47,7 @@ class TodoList extends Component {
 
     showDetail = (todo) => {
         this.props.navigation.navigate('Detail', {
-            todo: todo
+            todo,
         });
     }
 
@@ -63,7 +70,7 @@ class TodoList extends Component {
                             onShowDetail={this.showDetail}
                         />
                     }
-                    keyExtractor={(item, index) => item.id.toString()}
+                    keyExtractor={(item) => item.id.toString()}
                 />
 
                 <View style={{ backgroundColor: Color.VERY_LIGHT_GREY }}>

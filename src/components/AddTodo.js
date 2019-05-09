@@ -5,18 +5,16 @@ import TodoService from '../realm/service/todoService';
 import Color from '../constants/Color'
 
 class AddTodo extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            newTask: '',
-            note: '',
-            showBottomView: false,
-        }
+
+    state = {
+        newTask: '',
+        note: '',
+        showBottomView: false
     }
 
     saveTodo = () => {
         const newTask = this.state.newTask.trim();
-        if (newTask == '') {
+        if (newTask === '') {
             return;
         }
         let todoList = TodoService.save(newTask);
@@ -28,18 +26,17 @@ class AddTodo extends Component {
     }
 
 
-
-    renderBottomView() {
+    renderBottomView = () => {
         if (this.state.showBottomView) {
             return (
                 <View>
                     <TextInput style={styles.textInput}
                         placeholder='Add a Note'
-                        multiline={true}
+                        multiline
                         numberOfLines={3}
                         maxLength={40}
                         value={this.state.note}
-                        onChangeText={(text) => this.setState({ note: text })} />
+                        onChangeText={text => this.setState({ note: text })} />
 
                     <TouchableOpacity style={styles.button}
                     // onPress={() => this.onSaveClicked()}      
@@ -49,7 +46,7 @@ class AddTodo extends Component {
                 </View>
             );
         }
-        return null;
+
     }
 
 

@@ -2,21 +2,26 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableHighlight } from 'react-native';
 
 import TodoService from '../realm/service/todoService'
-import Color from '../constants/Color'  
+import Color from '../constants/Color'
 
 class Detail extends Component {
-    constructor(props) {
-        super(props);
-        this.todo = this.props.navigation.getParam('todo', null);
-        this.state = {
-            task: this.todo.task,
-            isCompleted: this.todo.isCompleted,
-        }
-    }
 
     static navigationOptions = {
         title: 'Todo Detail',
     };
+
+    state = {
+        task: null,
+        isCompleted: null,
+    }
+
+    componentDidMount() {
+        todo = this.props.navigation.getParam('todo', null);
+        this.setState({
+            task: todo.task,
+            isCompleted: todo.isCompleted,
+        });
+    }
 
     updateTodo = () => {
         TodoService.update(() => {
@@ -80,7 +85,9 @@ class Detail extends Component {
                     onPress={this.updateTodo}
                     underlayColor={Color.BUTTON_UNDERLAY}
                 >
+
                     <Text style={styles.buttonText}>Save</Text>
+
                 </TouchableHighlight>
 
             </View>
@@ -89,6 +96,7 @@ class Detail extends Component {
 
     }
 }
+// Styled Component
 
 const styles = StyleSheet.create({
     container: {

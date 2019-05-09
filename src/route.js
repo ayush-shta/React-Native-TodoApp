@@ -1,8 +1,8 @@
 import { createStackNavigator, createAppContainer } from "react-navigation";
 import { useScreens } from 'react-native-screens';
 
-import TodoList from './screens/TodoList'
-import Detail from './screens/Detail'
+import { TodoList, Detail } from './screens';
+
 import Color from './constants/Color'
 
 useScreens();

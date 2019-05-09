@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { TouchableHighlight, View, Text, StyleSheet } from 'react-native';
 import { Menu, MenuOptions, MenuOption, MenuTrigger } from 'react-native-popup-menu';
 
@@ -8,11 +9,14 @@ import Color from '../constants/Color'
 
 
 class TodoListItem extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
+    state = {
+        todo: null
+    }
+
+    componentWillMount() {
+        this.setState({
             todo: this.props.todo
-        }
+        });
     }
 
     changeCompletedStatus = () => {
@@ -21,7 +25,7 @@ class TodoListItem extends Component {
             todo.isCompleted = !todo.isCompleted;
         });
         this.setState({
-            todo: todo
+            todo
         });
     }
 
@@ -90,3 +94,8 @@ const styles = StyleSheet.create({
 });
 
 export default TodoListItem;
+
+
+TodoListItem.prototypes={
+    todo: PropTypes.object.isRequired
+}
