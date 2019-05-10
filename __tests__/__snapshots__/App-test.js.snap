@@ -229,12 +229,16 @@ exports[`Component renders correctly Todo List Item 1`] = `
         </View>
         <Text
           style={
-            Object {
-              "color": "#000000",
-              "flex": 1,
-              "fontSize": 18,
-              "textDecorationLine": "none",
-            }
+            Array [
+              Object {
+                "flex": 1,
+                "fontSize": 18,
+              },
+              Object {
+                "color": "#000000",
+                "textDecorationLine": "none",
+              },
+            ]
           }
         >
           two

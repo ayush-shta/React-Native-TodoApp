@@ -33,23 +33,6 @@ class Detail extends Component {
         });
     }
 
-    // changeCompletedStatus() {
-    //     const todo = this.state.todo;
-    //     TodoService.update(() => {
-    //         todo.isCompleted = !todo.isCompleted;
-    //     });
-    //     this.updateTodo();
-    // }
-
-    // onTextChange(text) {
-    //     var task = text;
-    //     //TODO refactor this
-    //     TodoService.update(() => {
-    //         this.state.todo.task = text;
-    //     })
-    //     this.updateTodo();
-    // }
-
 
     changeCompletedStatus() {
         this.setState({
@@ -96,7 +79,6 @@ class Detail extends Component {
 
     }
 }
-// Styled Component
 
 const styles = StyleSheet.create({
     container: {

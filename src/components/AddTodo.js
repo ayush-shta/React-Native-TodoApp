@@ -26,43 +26,15 @@ class AddTodo extends Component {
     }
 
 
-    renderBottomView = () => {
-        if (this.state.showBottomView) {
-            return (
-                <View>
-                    <TextInput style={styles.textInput}
-                        placeholder='Add a Note'
-                        multiline
-                        numberOfLines={3}
-                        maxLength={40}
-                        value={this.state.note}
-                        onChangeText={text => this.setState({ note: text })} />
-
-                    <TouchableOpacity style={styles.button}
-                    // onPress={() => this.onSaveClicked()}      
-                    >
-                        <Text style={styles.buttonText}>Save</Text>
-                    </TouchableOpacity>
-                </View>
-            );
-        }
-
-    }
-
-
 
     render() {
         return (
-            <View style={styles.container}
-            // onBlur={() => this.setState({ showBottomView: false })}
-            >
+            <View style={styles.container}>
                 <TextInput style={styles.textInput}
                     onSubmitEditing={this.saveTodo}
-                    // onFocus={() => this.setState({ showBottomView: true })}
                     placeholder='Add a todo'
                     value={this.state.newTask}
                     onChangeText={(text) => this.setState({ newTask: text })} />
-                {this.renderBottomView()}
             </View>
         );
     }
